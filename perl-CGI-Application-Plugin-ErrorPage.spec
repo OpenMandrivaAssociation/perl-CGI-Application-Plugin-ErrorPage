@@ -1,5 +1,5 @@
 %define module   CGI-Application-Plugin-ErrorPage
-%define version    1.20
+%define version    1.21
 %define release    %mkrel 1
 
 Name:       perl-%{module}
