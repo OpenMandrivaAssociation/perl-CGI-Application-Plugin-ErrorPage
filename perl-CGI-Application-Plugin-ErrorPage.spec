@@ -1,21 +1,22 @@
-%define module   CGI-Application-Plugin-ErrorPage
-%define version    1.21
-%define release    %mkrel 1
+%define upstream_name    CGI-Application-Plugin-ErrorPage
+%define upstream_version 1.21
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    A simple error page plugin for CGI::Application
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/CGI/%{module}-%{version}.tar.gz
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/CGI/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(CGI::Application)
 BuildRequires: perl(Params::Validate)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This plugin provides a shortcut for the common need of returning a simple
@@ -28,7 +29,7 @@ application.
 A simple design is provided below to get to you started. 
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -49,4 +50,3 @@ rm -rf %buildroot
 %doc Changes README LICENSE
 %{_mandir}/man3/*
 %perl_vendorlib/CGI
-
