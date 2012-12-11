@@ -50,3 +50,26 @@ rm -rf %buildroot
 %doc Changes README LICENSE
 %{_mandir}/man3/*
 %perl_vendorlib/CGI
+
+
+%changelog
+* Sat May 28 2011 Funda Wang <fwang@mandriva.org> 1.210.0-2mdv2011.0
++ Revision: 680680
+- mass rebuild
+
+* Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 1.210.0-1mdv2011.0
++ Revision: 405774
+- rebuild using %%perl_convert_version
+
+* Sun Jun 28 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.21-1mdv2010.0
++ Revision: 390324
+- update to new version 1.21
+
+* Wed Nov 26 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.20-1mdv2009.1
++ Revision: 307089
+- import perl-CGI-Application-Plugin-ErrorPage
+
+
+* Wed Nov 26 2008 cpan2dist 1.20-1mdv
+- initial mdv release, generated with cpan2dist
+
